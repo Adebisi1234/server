@@ -10,12 +10,10 @@ import cookieParser from "cookie-parser";
 const app = express();
 dotenv.config();
 
-const cors = require("cors");
-const corsOptions = {
-  origin: "*",
-  credentials: true, //access-control-allow-credentials:true
-  optionSuccessStatus: 200,
-};
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
 
 app.use(cors(corsOptions)); // Use this after the variable declaration
 
