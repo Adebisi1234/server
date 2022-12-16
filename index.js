@@ -21,10 +21,19 @@ app.use((req, res, next) => {
 });
 
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Methods", "*");
+  res.header("Access-Control-Allow-Methods", "DELETE, POST, GET, OPTIONS");
   next();
 });
 
+app.use((req, res, next) => {
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Content-Type, Authorization, X-Requested-With"
+  );
+  next();
+});
+
+header.Add();
 const connect = () => {
   mongoose
     .connect(process.env.MONGO)
