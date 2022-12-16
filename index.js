@@ -3,10 +3,12 @@ import mongoose from "mongoose";
 import userRoutes from "./routes/users.js";
 import videoRoutes from "./routes/videos.js";
 import commentRoutes from "./routes/comments.js";
+import dotenv from "dotenv";
 import authRoutes from "./routes/auth.js";
 import cookieParser from "cookie-parser";
 
 const app = express();
+dotenv.config();
 
 const connect = () => {
   mongoose
@@ -40,7 +42,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(8800, () => {
+app.listen(8080, () => {
   connect();
   console.log("Connected to Server");
 });
