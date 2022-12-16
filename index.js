@@ -15,6 +15,9 @@ const connect = () => {
     .connect(process.env.MONGO)
     .then(() => {
       console.log("Connected to DB");
+      app.listen(8080, () => {
+        console.log("Connected to Server");
+      });
     })
     .catch((err) => {
       throw err;
@@ -40,7 +43,4 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(8080, () => {
-  connect();
-  console.log("Connected to Server");
-});
+connect();
