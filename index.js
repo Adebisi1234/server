@@ -15,6 +15,11 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Headers", "*");
+  next();
+});
+
 const connect = () => {
   mongoose
     .connect(process.env.MONGO)
