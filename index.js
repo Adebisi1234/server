@@ -12,9 +12,7 @@ dotenv.config();
 
 const connect = () => {
   mongoose
-    .connect(
-      "mongodb+srv://tobiloba:lama@cluster0.5fcqqgj.mongodb.net/?retryWrites=true&w=majority"
-    )
+    .connect(process.env.MONGO)
     .then(() => {
       console.log("Connected to DB");
     })
