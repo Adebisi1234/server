@@ -1,6 +1,5 @@
 import express from "express";
 import mongoose from "mongoose";
-import dotenv from "dotenv";
 import userRoutes from "./routes/users.js";
 import videoRoutes from "./routes/videos.js";
 import commentRoutes from "./routes/comments.js";
@@ -12,7 +11,9 @@ dotenv.config();
 
 const connect = () => {
   mongoose
-    .connect(process.env.MONGO)
+    .connect(
+      "mongodb+srv://tobiloba:lama@cluster0.5fcqqgj.mongodb.net/?retryWrites=true&w=majority"
+    )
     .then(() => {
       console.log("Connected to DB");
     })
