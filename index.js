@@ -15,8 +15,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(cors(corsOptions)); // Use this after the variable declaration
-
 const connect = () => {
   mongoose
     .connect(process.env.MONGO)
