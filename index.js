@@ -10,25 +10,16 @@ import cookieParser from "cookie-parser";
 const app = express();
 dotenv.config();
 
-app.use((req, res, next) => {
+app.use(function (req, res, next) {
+  // 👇️ specify CORS headers to send 👇️
   res.header("Access-Control-Allow-Origin", "*");
-  next();
-});
-
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Headers", "*");
-  next();
-});
-
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Methods", "DELETE, POST, GET, OPTIONS, PUT");
-  next();
-});
-
-app.use((req, res, next) => {
+  res.header(
+    "Access-Control-Allow-Methods",
+    "POST, PUT, PATCH, GET, DELETE, OPTIONS"
+  );
   res.header(
     "Access-Control-Allow-Headers",
-    "Content-Type, Authorization, X-Requested-With"
+    "Origin, X-Api-Key, X-Requested-With, Content-Type, Accept, Authorization"
   );
   next();
 });
