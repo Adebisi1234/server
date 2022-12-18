@@ -19,6 +19,7 @@ app.use(function (req, res, next) {
   );
   res.header(
     "Access-Control-Allow-Headers",
+    "access-control-allow-origin",
     "Origin, X-Api-Key, X-Requested-With, Content-Type, Accept, Authorization"
   );
   next();
