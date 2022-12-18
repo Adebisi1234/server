@@ -3,8 +3,6 @@ import Video from "../models/Video.js";
 import { createError } from "../error.js";
 
 export const addVideo = async (req, res, next) => {
-  console.log("req.user", req.user);
-  console.log("req.para", req.params);
   const user = await User.findById(req.user.id);
 
   const newVideo = new Video({ userId: user._id, ...req.body });
