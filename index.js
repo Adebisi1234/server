@@ -12,14 +12,14 @@ dotenv.config();
 
 app.use(function (req, res, next) {
   // 👇️ specify CORS headers to send 👇️
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Methods",
     "POST, PUT, PATCH, GET, DELETE, OPTIONS"
   );
   res.header(
     "Access-Control-Allow-Headers",
-    "Content-Type",
+    "content-type: application/json",
     "access-control-allow-origin",
     "Origin, X-Api-Key, X-Requested-With, Content-Type, Accept, Authorization"
   );
