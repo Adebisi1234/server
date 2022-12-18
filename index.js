@@ -19,9 +19,9 @@ app.use(function (req, res, next) {
   );
   res.header(
     "Access-Control-Allow-Headers",
-    "content-type",
+    "content-type: */*",
     "access-control-allow-origin",
-    "Origin, X-Api-Key, X-Requested-With, Content-Type, Accept, Authorization"
+    "Origin, X-Api-Key, X-Requested-With,Accept, Authorization"
   );
   next();
 });
