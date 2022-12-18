@@ -86,7 +86,6 @@ export const like = async (req, res, next) => {
     res.status(200).json("The video has been liked.")
   } catch (err) {
     next(err);
-    console.log("Remains you")
   }
 };
 
